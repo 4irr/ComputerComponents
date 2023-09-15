@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/styles/styles.css}">
+</head>
+<body>
+    <div class="wrapper">
+        <div th:insert="blocks/header :: header"></div>
+        <div class="main">
+            <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true" style="background-color: gray"></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="" style="background-color: gray"></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class="" style="background-color: gray"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item item-accessories active">
+                        <div class="container">
+                            <div class="carousel-caption text-start">
+                                <h1>Комплектующие.</h1>
+                                <p>Добавление, редактирование, удаление и мониторинг наличия комплектующих.</p>
+                                <p><a class="btn btn-lg btn-primary" href="/accessories">Перейти</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item item-operations">
+                        <div class="container">
+                            <div class="carousel-caption" style="color: black">
+                                <h1>Оформление товаров.</h1>
+                                <p>Ведение учёта прибытия, распределения и продажи складских запасов комлпектующих.</p>
+                                <p><a class="btn btn-lg btn-primary" href="/operations">Перейти</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item item-analysis">
+                        <div class="container">
+                            <div class="carousel-caption text-end">
+                                <h1>Аналитика и составление отчётов.</h1>
+                                <p>Составление отчётов по работе и пропускной способности склада.</p>
+                                <p><button id="analytics" class="btn btn-lg btn-primary">Перейти</button></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <div class="container marketing">
+                <div class="row text-center my-5">
+                    <div class="col-lg-4">
+                        <div class="record1" style="width: 140px; height: 140px"></div>
+                        <h2 class="fw-normal">Расчёт дохода склада</h2>
+                        <p>Расчёт дохода склада на основе информации о торговых операциях отпуска комплектующих компьютерной техники за выбранный период.</p>
+                            <p><a class="btn btn-secondary" href="/reports/profit">Перейти »</a></p>
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-4">
+                        <div class="record2" style="width: 140px; height: 140px"></div>
+                        <h2 class="fw-normal">Анализ свободного места</h2>
+                        <p>Анализ свободного места на складе на основе информации о количестве всех ячеек. Информация о занятых ячейках склада.</p>
+                        <p><a class="btn btn-secondary" href="/reports/space">Перейти »</a></p>
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-4">
+                        <div class="record3" style="width: 140px; height: 140px"></div>
+                        <h2 class="fw-normal">Статистика операций</h2>
+                        <p>Статистика всех складских операций, выполненных на складе в течение определённого промежутка времени с отражением информации.</p>
+                        <p><a class="btn btn-secondary" href="/reports/statistics">Перейти »</a></p>
+                    </div><!-- /.col-lg-4 -->
+                </div><!-- /.row -->
+
+
+                <!-- START THE FEATURETTES -->
+
+                <hr class="featurette-divider">
+
+                <div class="row featurette py-5">
+                    <div class="col-md-7 d-flex flex-column justify-content-center">
+                        <h2 class="featurette-heading fw-normal lh-1">Ведение учёта комплектующих с помощью функций приложения.</h2>
+                        <p class="lead">Данное приложение позволяет вести учёт и мониторинг комплектующих компьютерной техники.</p>
+                    </div>
+                    <div class="col-md-5">
+                        <img th:src="@{images/accessories.jpg}" alt="" style="width: 500px; height: 400px">
+                    </div>
+                </div>
+
+                <hr class="featurette-divider">
+
+                <div class="row featurette py-5">
+                    <div class="col-md-7 order-md-2 d-flex flex-column justify-content-center" style="padding-left: 100px">
+                        <h2 class="featurette-heading fw-normal lh-1">Выполнение операций оформления комплектующих для учёта их наличия.</span></h2>
+                        <p class="lead">Добавляйте информацию о приёме, распределении и продаже комплектующих со склада, что упростит мониторинг движения товара через склад.</p>
+                    </div>
+                    <div class="col-md-5 order-md-1">
+                        <img th:src="@{images/operations.png}" alt="" style="width: 550px; height: 400px">
+                    </div>
+                </div>
+
+                <hr class="featurette-divider">
+
+                <div class="row featurette py-5">
+                    <div class="col-md-7 flex-column d-flex justify-content-center">
+                        <h2 class="featurette-heading fw-normal lh-1">Отчёты и аналитика работы склада.</h2>
+                        <p class="lead">Составляйте разнообразные виды отчётов для собственной статистики и аналитики работы склада, его пропускной способности и движении товаров через склад.</p>
+                    </div>
+                    <div class="col-md-5">
+                        <img th:src="@{images/analytics.png}" alt="" style="width: 550px; height: 400px">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div th:insert="blocks/footer :: footer"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="/scripts/script.js"></script>
+</body>
+</html>

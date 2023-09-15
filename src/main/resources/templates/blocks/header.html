@@ -1,0 +1,30 @@
+<div id="header" th:fragment="header">
+  <header class="p-3 text-bg-dark">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="/home" class="nav-link px-2 text-secondary">Главная</a></li>
+          <li><a href="/operations" class="nav-link px-2 text-white">Оформление</a></li>
+          <li><a href="/accessories" class="nav-link px-2 text-white">Комплектующие</a></li>
+          <li><a href="/contacts" class="nav-link px-2 text-white">Контакты</a></li>
+        </ul>
+
+        <form action="/search" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+          <input type="search" name="value" class="form-control form-control-dark text-bg-dark" placeholder="Поиск..." autocomplete="off" aria-label="Search"/>
+        </form>
+
+        <div class="d-flex justify-content-between align-items-center" th:if="${user!=null}">
+          <a type="button" href="/profile" class="btn btn-light me-2">Мой профиль</a>
+          <form id="out" method="POST" th:action="@{/logout}">
+            <button class="btn btn-outline-light" type="submit">Выход <i class='bx bx-log-out'></i></button>
+          </form>
+        </div>
+
+        <div th:if="${user==null}" class="text-end">
+          <a href="/login" class="btn btn-outline-light me-2">Войти</a>
+          <a href="/registration" class="btn btn-warning">Регистрация</a>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
